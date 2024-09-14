@@ -17,6 +17,7 @@ import pygame.mixer as mixer
 import time
 
 
+
 def limpiar_pantalla():
     """
     The function `limpiar_pantalla` clears the console screen and waits for user input to continue.
@@ -36,3 +37,36 @@ def play_sound():
     mixer.music.play()
     time.sleep(0.4)
 
+"""
+D1 - En el modulo "auxiliares": 
+Desarrolla la funcion "mostrar_nombre" 
+la cual recibira como parametros, la lista de nombres y un numero entero 
+que representara el indice de la lista el cual debe extraer el nombre, 
+luego debe retornarlo.
+"""
+
+def mostrar_nombre(lista_nombres: list,indice: int) -> str:
+    if indice < 0 or indice > len(lista_nombres):
+        print("Error. Ingrese otro numero. Ese numero no esta en la lista.\n")
+    else:
+        lista_nombres[indice]
+
+""" 
+D4 - En el modulo "auxiliares": Desarrolla la funcion "obtener_maximo", 
+la cual recibira como parametro una lista de numeros y 
+debe obtener el numero mas grande, 
+luego retornarlo como un flotante.
+"""
+
+def obtener_maximo(lista_numeros: list) -> float:
+    maximo = None
+    for numero in lista_numeros:
+        if not maximo or maximo < numero:
+            maximo = numero
+    return float(maximo)
+
+
+# if __name__ == '__main__':
+#     lista_testing = [1,5,10,15,20,88,1110]
+#     numero = obtener_maximo(lista_testing)
+#     print(numero)
