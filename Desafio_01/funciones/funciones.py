@@ -47,7 +47,7 @@ def utn_mostar_heroe_mayor_altura(
         lista_poder[indice_mas_alto]
     ]
     
-    return heroe_mas_alto
+    print(heroe_mas_alto)
 
 def utn_mostrar_heroes_mas_fuertes(
         listas_nombres: list,

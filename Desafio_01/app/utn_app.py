@@ -34,11 +34,11 @@ def utn_heroes_app(
                 utn_mostrar_identidades_heroes(lista_identidades)
             case 3:
                 utn_mostar_heroe_mayor_altura(
-                    lista_nombres,
-                    lista_identidades,
-                    lista_poderes,
                     lista_alturas,
-                    lista_generos)
+                    lista_generos,
+                    lista_identidades,
+                    lista_nombres,
+                    lista_poderes)
             case 4:
                 utn_mostrar_heroes_mas_fuertes(
                     lista_nombres,
