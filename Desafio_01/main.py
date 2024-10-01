@@ -10,3 +10,4 @@ if __name__ == '__main__':
         lista_nombres_heroes,
         lista_poder_heroes
         )
+    

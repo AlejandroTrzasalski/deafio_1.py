@@ -86,6 +86,17 @@ debe retornar el promedio numerico.
 def promedio_de_lista_numerica (lista_numeros: list) -> int:
     return sum(lista_numeros) / len(lista_numeros)
 
+
+""" 
+D10 - En el modulo "auxiliares": Desarrolla la funcion "obtener_mitad_de_maximo" 
+la cual recibira como parametro una lista de numeros, dentro tendra que llamar a la funcion "obtener_maximo" y 
+al resultado dividirlo entre dos, ese resultado tendra que retornarlo.
+"""
+
+def obtener_mitad_de_maximo(lista_numeros: list) -> float:
+    max = obtener_maximo(lista_numeros) 
+    return max / 2
+
 # if __name__ == '__main__':
 #     lista_testing = [1,5,10,15,20,88,1110]
 #     numero = obtener_maximo(lista_testing)

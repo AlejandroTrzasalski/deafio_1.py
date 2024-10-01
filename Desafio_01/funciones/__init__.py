@@ -26,7 +26,10 @@ from .funciones import (
     utn_mostar_heroe_mayor_altura,
     utn_mostrar_heroes_mas_fuertes,
     filtrar_heroes_generodef,
-    utn_mostrar_heroes_poder_superior_promedio
+    utn_mostrar_heroes_poder_superior_promedio,
+    utn_mostrar_heroes_mas_debiles,
+    ordenar_burbujeo_heroes,
+    ordenar_burbujeo_alturas_desc
 )
 
 from .auxiliares import play_sound, limpiar_pantalla

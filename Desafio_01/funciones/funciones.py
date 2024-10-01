@@ -1,5 +1,6 @@
 from .auxiliares import obtener_maximo
 from .auxiliares import promedio_de_lista_numerica
+from .auxiliares import obtener_mitad_de_maximo
 
 """ 
 D2 - En el modulo "funciones": Desarrolla la funcion 
@@ -50,11 +51,11 @@ def utn_mostar_heroe_mayor_altura(
     print(heroe_mas_alto)
 
 def utn_mostrar_heroes_mas_fuertes(
-        listas_nombres: list,
-        lista_identidades: list,
+        lista_alturas: list,
         lista_generos: list,
-        lista_poder: list,
-        lista_alturas: list
+        lista_identidades: list,
+        listas_nombres: list,
+        lista_poder: list
 ):
     max_poder = obtener_maximo(lista_poder)
 
@@ -102,10 +103,66 @@ def utn_mostrar_heroes_poder_superior_promedio (
         lista_poder: list
 ):
     promedio = promedio_de_lista_numerica(lista_poder)
-    valores_superiores_al_promedio = []
 
     for indice in range(len(lista_poder)):
         if lista_poder[indice] > promedio:
-            valores_superiores_al_promedio.append(lista_poder[indice])
+            mensaje = f"Nombre: {listas_nombres[indice]} | Identidad: {lista_identidades[indice]}"\
+            f" | Genero: {lista_generos[indice]}   | Poder: {lista_poder[indice]}  |  Altura: {lista_alturas[indice]}"
+            print(mensaje)
     
-    return valores_superiores_al_promedio
+    print(mensaje) 
+
+def utn_mostrar_heroes_mas_debiles(
+        lista_alturas: list,
+        lista_generos: list,
+        lista_identidades: list,
+        lista_nombres: list,
+        lista_poder: list
+):
+    menos_mitad_altura = obtener_mitad_de_maximo(lista_alturas)
+
+    for i in range(len(lista_alturas)):
+        if lista_alturas[i] <= menos_mitad_altura:
+            mensaje = f"Nombre: {lista_nombres[i]} | Identidad: {lista_identidades[i]} | " \
+                    f"Genero: {lista_generos[i]} | Poder: {lista_poder[i]} | Altura: {lista_alturas[i]}"
+        print(mensaje)
+
+
+def ordenar_burbujeo_heroes(lista_nombres: list, lista_poder: list):
+    
+    for indice_1 in range(len(lista_poder)-1):
+        for indice_2 in range(indice_1 + 1, len(lista_poder)):
+            
+            if lista_poder[indice_1] > lista_poder[indice_2]: 
+                
+                aux_poder = lista_poder[indice_1]
+                lista_poder[indice_1] = lista_poder[indice_2]
+                lista_poder[indice_2] = aux_poder
+                
+                
+                aux_nombre = lista_nombres[indice_1]
+                lista_nombres[indice_1] = lista_nombres[indice_2]
+                lista_nombres[indice_2] = aux_nombre
+                mensaje = f"Nombre: {lista_nombres[indice_2]} | Poder: {lista_poder[indice_2]} |"
+                
+        print(mensaje)
+
+def ordenar_burbujeo_alturas_desc(lista_nombres: list, lista_alturas: list):
+
+    for indice_1 in range(len(lista_alturas)-1):
+        for indice_2 in range(indice_1 + 1, len(lista_alturas)):
+            
+            if lista_alturas[indice_1] < lista_alturas[indice_2]: 
+                
+                aux_altura = lista_alturas[indice_1]
+                lista_alturas[indice_1] = lista_alturas[indice_2]
+                lista_alturas[indice_2] = aux_altura
+                
+                
+                aux_nombre = lista_nombres[indice_1]
+                lista_nombres[indice_1] = lista_nombres[indice_2]
+                lista_nombres[indice_2] = aux_nombre
+                mensaje = f"Nombre: {lista_nombres[indice_2]} | Altura: {lista_alturas[indice_2]} |"
+                
+        print(mensaje)
+        

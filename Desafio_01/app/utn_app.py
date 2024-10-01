@@ -6,18 +6,21 @@ from funciones import (
     utn_mostrar_identidades_heroes,
     utn_mostar_heroe_mayor_altura,
     utn_mostrar_heroes_mas_fuertes,
-    filtrar_heroes_generodef
-    
+    filtrar_heroes_generodef,
+    utn_mostrar_heroes_poder_superior_promedio,
+    utn_mostrar_heroes_mas_debiles,
+    ordenar_burbujeo_heroes,
+    ordenar_burbujeo_alturas_desc
 )
 
 from validaciones import validar_opcion
 
 def utn_heroes_app(
-        lista_nombres,
-        lista_identidades,
-        lista_poderes,
         lista_alturas,
-        lista_generos
+        lista_generos,
+        lista_identidades,
+        lista_nombres,
+        lista_poderes
         ):
     
     while True:
@@ -38,14 +41,15 @@ def utn_heroes_app(
                     lista_generos,
                     lista_identidades,
                     lista_nombres,
-                    lista_poderes)
+                    lista_poderes
+                )
             case 4:
                 utn_mostrar_heroes_mas_fuertes(
-                    lista_nombres,
-                    lista_identidades,
-                    lista_poderes,
                     lista_alturas,
-                    lista_generos
+                    lista_generos,
+                    lista_identidades,
+                    lista_nombres,
+                    lista_poderes
                 )
             case 5:
                     filtrar_heroes_generodef(
@@ -66,11 +70,42 @@ def utn_heroes_app(
                         genero="Masculino"
                     )
             case 7:
-                pass
+                filtrar_heroes_generodef(
+                        lista_alturas,
+                        lista_generos,
+                        lista_identidades,
+                        lista_nombres,
+                        lista_poderes,
+                        genero="No-Binario"
+                    )
             case 8:
-                pass
+                utn_mostrar_heroes_poder_superior_promedio(
+                        lista_alturas,
+                        lista_generos,
+                        lista_identidades,
+                        lista_nombres,
+                        lista_poderes
+                )
             case 9:
+                utn_mostrar_heroes_mas_debiles(
+                        lista_alturas,
+                        lista_generos,
+                        lista_identidades,
+                        lista_nombres,
+                        lista_poderes
+                )
+            case 10:
+                ordenar_burbujeo_heroes(
+                    lista_nombres,
+                    lista_poderes
+                    )
+            case 11:
+                ordenar_burbujeo_alturas_desc(
+                    lista_nombres,
+                    lista_alturas
+                    )
+            case 12:
                 pass
-            case 10: # Salir del programa
+            case 13: # Salir del programa
                 break
         limpiar_pantalla()
