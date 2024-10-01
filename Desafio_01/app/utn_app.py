@@ -10,7 +10,8 @@ from funciones import (
     utn_mostrar_heroes_poder_superior_promedio,
     utn_mostrar_heroes_mas_debiles,
     ordenar_burbujeo_heroes,
-    ordenar_burbujeo_alturas_desc
+    ordenar_burbujeo_alturas_desc,
+    elegir_des_o_asc
 )
 
 from validaciones import validar_opcion
@@ -27,7 +28,7 @@ def utn_heroes_app(
 
         mostrar_menu()
 
-        opcion = validar_opcion(1,10)
+        opcion = validar_opcion(1,13)
         play_sound()
 
         match opcion:
@@ -105,7 +106,10 @@ def utn_heroes_app(
                     lista_alturas
                     )
             case 12:
-                pass
+                elegir_des_o_asc(
+                     lista_nombres,
+                    lista_alturas
+                )
             case 13: # Salir del programa
                 break
         limpiar_pantalla()

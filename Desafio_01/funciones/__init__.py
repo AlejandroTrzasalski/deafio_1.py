@@ -29,7 +29,8 @@ from .funciones import (
     utn_mostrar_heroes_poder_superior_promedio,
     utn_mostrar_heroes_mas_debiles,
     ordenar_burbujeo_heroes,
-    ordenar_burbujeo_alturas_desc
+    ordenar_burbujeo_alturas_desc,
+    elegir_des_o_asc
 )
 
 from .auxiliares import play_sound, limpiar_pantalla

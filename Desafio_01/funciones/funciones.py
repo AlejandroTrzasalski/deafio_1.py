@@ -165,4 +165,42 @@ def ordenar_burbujeo_alturas_desc(lista_nombres: list, lista_alturas: list):
                 mensaje = f"Nombre: {lista_nombres[indice_2]} | Altura: {lista_alturas[indice_2]} |"
                 
         print(mensaje)
+
+def elegir_des_o_asc(lista_nombres: list, lista_poder: list):
+    
+    opcion = input("Ingrese 'ASC' si quiere ordenar de forma ASCENDENTE.\nIngrese 'DES' si quiere ordenar de forma DESCENDENTE.")
+
+    if opcion == 'ASC' or opcion == 'DES':
+
+        for indice_1 in range(len(lista_poder)-1):
+            for indice_2 in range(indice_1 + 1, len(lista_poder)):
+                if opcion == 'ASC':
+                    if lista_poder[indice_1] > lista_poder[indice_2]: 
+                        
+                        aux_poder = lista_poder[indice_1]
+                        lista_poder[indice_1] = lista_poder[indice_2]
+                        lista_poder[indice_2] = aux_poder
+                        
+                        
+                        aux_nombre = lista_nombres[indice_1]
+                        lista_nombres[indice_1] = lista_nombres[indice_2]
+                        lista_nombres[indice_2] = aux_nombre
+                        mensaje = f"Nombre: {lista_nombres[indice_2]} | Poder: {lista_poder[indice_2]} |"
+                elif opcion == 'DES':
+                    if lista_poder[indice_1] < lista_poder[indice_2]: 
+                        
+                        aux_poder = lista_poder[indice_1]
+                        lista_poder[indice_1] = lista_poder[indice_2]
+                        lista_poder[indice_2] = aux_poder
+                        
+                        
+                        aux_nombre = lista_nombres[indice_1]
+                        lista_nombres[indice_1] = lista_nombres[indice_2]
+                        lista_nombres[indice_2] = aux_nombre
+                        mensaje = f"Nombre: {lista_nombres[indice_2]} | Poder: {lista_poder[indice_2]} |"
+    
+            print(mensaje)
+    
+    else:print('Error. Opcion no valida.') 
+        
         
